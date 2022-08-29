@@ -9,3 +9,10 @@ console.log(total, price); // brug komma til at få printet flere variablier - i
 const balanceEquals = sum === total
 console.log(balanceEquals); // husk at bruge 3 '=', for strict equality-check (!== er også ok)
 
+const cat = {
+    key: "value",
+    name: "Tom"
+}
+
+console.log(cat.name); // dot-notation (bruge denne)
+console.log(cat["name"]); // square-bracket-notation
