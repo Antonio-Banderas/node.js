@@ -21,16 +21,19 @@ const addArrowFunction = ((a, b) => {
 const addArrowFunctionCompact = (a, b) => a + b;
 
 
+const functionReference = add; // function reference
+const functioneehhhh = add(); // function
+
 // callback function
-function generecActionExecutor(anyCallbackFunction, name){
+function genericActionExecutor(anyCallbackFunction, anyName){
     // execute some code ...
-    return anyCallbackFunction(name);
+    return anyCallbackFunction(anyName);
 }
 
 const spitting = (name) => `${name} is spitting.`;
+console.log(genericActionExecutor(spitting,"Amanda"));
 
-console.log(generecActionExecutor(spitting,"Amanda"))
+const shooting = (shooter) => `${shooter} is shooting.`;
+console.log(genericActionExecutor(shooting,"Malthe"));
 
-
-const functionReference = add; // function reference
-const functioneehhhh = add(); // function
+console.log(genericActionExecutor((name) => `${name} is running away`,"Murat"));
