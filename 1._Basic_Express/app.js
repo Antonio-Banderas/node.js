@@ -28,13 +28,25 @@ app.get("/actors", (req,res) => {
     });
 })
 
-
 app.get("/cups", (req, res) => {
     res.send({ 
         colour: "red",
         brand: "royal"
     });
 });
+
+
+
+console.log(new Date().toLocaleString());
+const week = [ "sun", "mon", "tues", "wed", "thur", "fri", "sat"] //american style
+console.log(week[new Date().getDay()]);
+
+console.log(new Date().getMonth());
+
+app.get("/date", (req, res) => {
+    res.send(new Date().toLocaleDateString());
+});
+
 
 
 // app.listen(8080) 
