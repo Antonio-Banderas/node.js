@@ -7,12 +7,22 @@ app.use(express.static("public")) // allows folder to be accesed. security featu
 
 // - GET - //
 app.get("/", (request, respone) => {
-    respone.sendFile(path.resolve("public/frontpage.html"))
+    respone.sendFile(path.resolve("public/frontpage/frontpage.html"))
+});
+
+app.get("/battle", (request, respone) => {
+    respone.sendFile(path.resolve("public/battle", "battle.html"))
 });
 
 app.get("/pokemon", (req, res) => {
-    res.send({ data: ["Slowpoke"] });
-});
+
+
+    fetch("https://pokeapi.co/api/v2/pokemon")
+    .then(response => response.json())
+    .then(result => res.send({ data: result}))
+    });
+
+  
 
 app.get("/pokemon/:id", (request, respone) => {});
 // - POST - //
